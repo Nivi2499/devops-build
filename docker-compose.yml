@@ -4,5 +4,5 @@ services:
     image: devops-build-app:dev
     container_name: devops-build-app
     ports:
-      - "8080:80"
+      - "8081:80"
     restart: unless-stopped
