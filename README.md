@@ -268,7 +268,7 @@ https://github.com/Nivi2499/devops-build
 
 
 
-Jenkins scans the repository periodically every 5 minutes.
+Jenkins scans the repository periodically every 30 minutes.
 
 
 
@@ -333,4 +333,33 @@ When changes are merged into the master branch:
 \- Jenkins DEV pipeline executed successfully.
 
 \- Jenkins PROD pipeline executed successfully.
+
+
+## Application Monitoring and Notifications
+
+Uptime Kuma is used to monitor the availability of the Online Shopping application.
+
+### Monitoring Configuration
+
+- Monitoring tool: Uptime Kuma
+- Monitor type: HTTP(s)
+- Monitor name: Online Shopping Application
+- Application URL: http://host.docker.internal:8081
+- Check interval: 60 seconds
+- Retry attempts: 3
+- Notifications: Gmail SMTP email alerts
+
+### Monitoring Test Results
+
+The following tests were performed successfully:
+
+- Application running: Monitor showed UP.
+- Application stopped: Monitor detected DOWN.
+- DOWN email notification: Received successfully.
+- Application restarted: Monitor returned to UP.
+- Recovery email notification: Not independently verified.
+
+### AWS Deployment Status
+
+AWS EC2 deployment is currently pending because the AWS account's organization Service Control Policy (SCP) explicitly denies the required EC2 permissions. No EC2 resources were created for this project.
 
